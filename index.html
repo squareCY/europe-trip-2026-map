@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 十一欧洲行程 · 路程说明图</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="masthead-left">
+        <p class="kicker">路程说明图 · 总览与逐日放大</p>
+        <h1>2026 十一欧洲行程</h1>
+        <p class="sub">荷兰 · 比利时 · 法国 · 英国　｜　9 月 24 日 — 10 月 7 日　｜　14 天 11 晚　｜　3 人</p>
+      </div>
+      <div class="masthead-right">
+        <div class="stat">
+          <span>住宿</span>
+          <strong>阿姆 3　布鲁塞尔 2　巴黎 4　伦敦 2</strong>
+        </div>
+        <div class="stat">
+          <span>跨城主线</span>
+          <strong>自驾 3 日　欧洲之星　兰斯 TGV</strong>
+        </div>
+      </div>
+    </header>
+
+    <nav class="timeline" id="timeline" aria-label="行程日期"></nav>
+
+    <main class="workspace">
+      <svg class="callout-layer" id="callout-layer" aria-hidden="true"></svg>
+      <section class="overview-pane">
+        <div class="pane-label">
+          <span>西欧总览</span>
+          <span id="overview-caption">跨城路段 · 选中日期加粗</span>
+        </div>
+        <div class="overview-stage">
+          <div id="overview-map"></div>
+          <aside class="world-card" id="world-card">
+            <div class="world-head">
+              <span>国际航线</span>
+              <span id="world-caption">香港 — 上海 — 欧洲</span>
+            </div>
+            <div id="world-map"></div>
+          </aside>
+          <div class="legend" id="legend"></div>
+        </div>
+      </section>
+
+      <section class="detail-pane" id="detail-pane">
+        <div class="inset-head">
+          <div>
+            <p class="inset-kicker" id="inset-kicker">局部放大</p>
+            <h2 id="inset-title">当日行程</h2>
+            <p class="inset-summary" id="inset-summary"></p>
+          </div>
+          <div class="variant-box" id="variant-box" hidden>
+            <span>9.29 路线</span>
+            <div class="variant-btns">
+              <button type="button" data-variant="B" class="is-active">B 迪南 + 那慕尔</button>
+              <button type="button" data-variant="A">A 迪南 + 卢森堡</button>
+            </div>
+          </div>
+        </div>
+        <div class="inset-frame">
+          <div id="inset-map"></div>
+        </div>
+        <div class="activity-wrap">
+          <div class="activity-head">
+            <span>当日时刻</span>
+            <span id="activity-count"></span>
+          </div>
+          <ol class="activity-list" id="activity-list"></ol>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
