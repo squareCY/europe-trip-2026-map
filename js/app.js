@@ -64,6 +64,18 @@
     return MODE[name] || MODE.walk;
   }
 
+  function isPhone() {
+    return window.matchMedia("(max-width: 720px)").matches;
+  }
+
+  function scrollActiveDay() {
+    const nav = document.getElementById("timeline");
+    const btn = nav && nav.querySelector(".day-btn.is-active");
+    if (!btn) return;
+    const left = btn.offsetLeft - nav.clientWidth / 2 + btn.clientWidth / 2;
+    nav.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+  }
+
   function greatCircle(a, b, n) {
     n = n || 72;
     const toX = (lat, lng) => {
@@ -198,6 +210,7 @@
     nav.querySelectorAll(".day-btn").forEach((btn) => {
       btn.addEventListener("click", () => selectDay(btn.dataset.day));
     });
+    scrollActiveDay();
   }
 
   function drawOverviewBase() {
@@ -474,6 +487,7 @@
   function updateCallout() {
     const svg = document.getElementById("callout-layer");
     svg.innerHTML = "";
+    if (isPhone()) return;
     const day = current();
     if (!day || day.insetMode === "asia" || !ovCallout) return;
 
