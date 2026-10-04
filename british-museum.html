@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>大英博物馆 · 两小时重点</title>
+  <link rel="stylesheet" href="css/museum.css" />
+</head>
+<body>
+  <div class="museum">
+    <header class="top">
+      <a class="back" href="index.html#1005">返回行程</a>
+      <p class="kicker">10.5 周一 · 已订 10:20</p>
+      <h1>大英博物馆</h1>
+      <p class="sub">10:20–12:20 重点 · 12:20–13:20 漫游 · 13:20 离馆，赶 15:10 塔桥</p>
+    </header>
+    <div class="phase" id="phase" role="tablist" aria-label="参观阶段"></div>
+    <div class="floors" id="floors" role="tablist" aria-label="楼层"></div>
+    <p class="map-note" id="map-note"></p>
+    <div class="map-scroll" id="map-scroll">
+      <div id="map"></div>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><i class="swatch"></i>重点路线</span>
+      <span><i class="swatch spur"></i>猎狮侧厅</span>
+      <span><i class="swatch browse"></i>漫游区</span>
+      <span><i class="swatch closed"></i>今天关闭</span>
+    </div>
+    <div class="steps" id="steps" aria-label="参观顺序"></div>
+    <section class="panel" id="panel" aria-live="polite"></section>
+    <p class="foot" id="foot"></p>
+    <div class="nav">
+      <div class="nav-inner" id="nav"></div>
+    </div>
+  </div>
+  <script src="js/british-museum-data.js"></script>
+  <script src="js/british-museum.js"></script>
+</body>
+</html>

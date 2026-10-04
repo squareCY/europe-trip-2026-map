@@ -377,7 +377,9 @@
     const booked = act.booked ? "已订" : "";
     return `<strong>${i + 1}. ${act.time}　${act.name}</strong><br>${p.name}${
       act.note ? `<br>${act.note}` : ""
-    }${booked ? `<br>${booked}` : ""}`;
+    }${booked ? `<br>${booked}` : ""}${
+      act.page ? `<br><a href="${act.page}">馆内路线</a>` : ""
+    }`;
   }
 
   function paintActivities(day) {
@@ -398,6 +400,8 @@
           <span class="act-time">${act.time}</span>
           <span class="act-name">${act.name}${
             act.note ? `<span class="act-note">${act.note}</span>` : ""
+          }${
+            act.page ? `<a class="act-link" href="${act.page}">馆内路线</a>` : ""
           }</span>
           <span class="act-meta">
             <span class="pill mode">${mode.label}</span>
@@ -408,6 +412,9 @@
       .join("");
     list.querySelectorAll(".activity-item").forEach((el) => {
       el.addEventListener("click", () => focusActivity(day, Number(el.dataset.idx)));
+    });
+    list.querySelectorAll(".act-link").forEach((link) => {
+      link.addEventListener("click", (event) => event.stopPropagation());
     });
   }
 

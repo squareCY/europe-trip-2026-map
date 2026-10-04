@@ -415,6 +415,17 @@ h1 {
   color: var(--muted);
 }
 
+.act-link {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 2px 8px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
 .act-meta {
   display: flex;
   flex-direction: column;

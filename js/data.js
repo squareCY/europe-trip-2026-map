@@ -422,7 +422,7 @@ window.TRIP = {
       overviewLegs: [],
       activities: [
         { time: "09:15", name: "布鲁姆斯伯里街区散步", place: "bloomsbury", mode: "walk" },
-        { time: "10:20", name: "大英博物馆", place: "british", mode: "walk", booked: true, note: "已订免费时段 · 约 3 小时" },
+        { time: "10:20", name: "大英博物馆", place: "british", mode: "walk", booked: true, note: "已订免费时段 · 约 3 小时", page: "british-museum.html" },
         { time: "15:10", name: "伦敦塔桥展览（玻璃步道）", place: "towerbridge", mode: "metro", note: "10 月起 16:30 末次入场" },
         { time: "16:30", name: "伦敦塔外观与河畔", place: "tower", mode: "walk" },
         { time: "17:45", name: "中国城 / 苏豪早晚餐", place: "chinatown", mode: "metro" },
